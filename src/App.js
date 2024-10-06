@@ -1,7 +1,8 @@
 import "./App.css";
+import TirpList from "./components/tripList";
 
 function App() {
-  return <h1>Hi there</h1>;
+  return <TirpList />;
 }
 
 export default App;
