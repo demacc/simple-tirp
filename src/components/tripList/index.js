@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 export default function TirpList() {
   let [trips, setTrips] = useState([]);
 
   let [url, setUrl] = useState("http://localhost:3001/tirp");
-  //useEffect api fetch yin infinty loop ma pyit ag use ya
-  useEffect(() => {
+  //useCallback
+  //useEffect mr function twy ko depency ah ny nk use kyin yin
+  //infinty loop ma pyit aung twel use ya
+  let Fetchapi = useCallback(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setTrips(data);
       });
-  }, [url]); //depency arr ka tt chr ka ny url ko update loke tae ah kr components mout pyn pyit aug loke py
+  }, [url]);
+  //useEffect api fetch yin infinty loop ma pyit ag use ya
+  useEffect(() => {
+    Fetchapi();
+  }, [Fetchapi]); //depency arr ka tt chr ka ny url ko update loke tae ah kr components mout pyn pyit aug loke py
 
   return (
     <div>
