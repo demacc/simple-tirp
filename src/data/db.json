@@ -1,0 +1,19 @@
+{
+    "tirp" : [
+        {
+            "name" : "1 night in Chang Thr",
+            "price" : 100000,
+            "id" : 1
+        },
+        {
+            "name" : "1 night in Nay Pyi Taw",
+            "price" : 40000,
+            "id" : 2
+        },
+        {
+            "name" : "1 night in ThaiLand",
+            "price" : 2000000,
+            "id" : 3
+        }
+    ]
+}
