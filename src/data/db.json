@@ -3,17 +3,22 @@
         {
             "name" : "1 night in Chang Thr",
             "price" : 100000,
-            "id" : 1
+            "id" : 1,
+            "location" : "Myanmar"
         },
         {
             "name" : "1 night in Nay Pyi Taw",
             "price" : 40000,
-            "id" : 2
+            "id" : 2,
+            "location" : "Myanmar"
+
         },
         {
-            "name" : "1 night in ThaiLand",
+            "name" : "1 night in bangkok",
             "price" : 2000000,
-            "id" : 3
+            "id" : 3,
+            "location" : "Thailand"
+
         }
     ]
 }
