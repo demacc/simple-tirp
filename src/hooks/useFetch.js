@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-function useFetch(url) {
+function useFetch(url, obj) {
   let [data, setData] = useState(null);
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(null);
+
+  let objOne = useRef(obj).current;
   useEffect(() => {
     let abortController = new AbortController();
     let signal = abortController.signal;
-
+    console.log(objOne);
     setLoading(false);
     fetch(url, {
       signal,
@@ -23,10 +25,9 @@ function useFetch(url) {
       .catch((e) => setError(e.message));
     //cleanup function
     return () => {
-      console.log("hit");
       abortController.abort();
     };
-  }, [url]);
+  }, [url, objOne]);
 
   return { data, loading, error };
 }
