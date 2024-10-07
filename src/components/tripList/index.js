@@ -4,7 +4,7 @@ import useFetch from "../../hooks/useFetch";
 
 export default function TirpList() {
   let [url, setUrl] = useState("http://localhost:3001/tirp");
-  let { data: trips, loading, error } = useFetch(url, { Rule: "Get" });
+  let { data: trips, loading, error } = useFetch(url);
   return (
     <div className="container">
       {error && <h3>{error}</h3>}
